@@ -2,7 +2,30 @@
 A saída é 91;
 
 - Questão 02
-Questão muito legal, infelizmente não consegui resolver, irei continuar tentando!
+#include <stdio.h>
+int main(){
+    int input, baseCase1 = 1, baseCase2 = 1, actual = 0; 
+    printf("Digite um valor inteiro: ");
+    scanf("%d", &input);
+    actual = baseCase1 + baseCase2;
+    if(((input == baseCase1) || (input == baseCase2) || (input == actual))){
+        printf("Esse número faz parte da sequência de fibonacci.");
+    }else{
+        while(input > actual){
+            baseCase1 += baseCase2;
+            baseCase2 += actual;
+            actual = baseCase1 + baseCase2;
+        }
+    
+        if((input == actual) || (input == baseCase1) || (input == baseCase2)){
+            printf("Esse número faz parte da sequência de fibonacci.");
+        }else{
+            printf("Esse número não faz parte da sequência de fibonacci.");
+        }
+    }
+    
+    return 0;
+}
 
 - Questão 03
 Item a: 
